@@ -6,7 +6,7 @@ import prisma from "@/prisma";
 
 interface ParamsType {
   id: string;
-  name?: string;
+  name: string;
   email: string;
 }
 
