@@ -2,7 +2,6 @@
 "use server";
 
 // Import the model and the Prisma client
-import { User } from "@prisma/client";
 import prisma from "@/prisma";
 
 interface ParamsType {
@@ -34,7 +33,7 @@ export async function getUserById(id: string) {
 }
 
 // Create: Create a user
-export const createUser = async (params: User) => {
+export const createUser = async (params: ParamsType) => {
   try {
     const newUser = await prisma.user.create({
       data: {
@@ -49,7 +48,7 @@ export const createUser = async (params: User) => {
 };
 
 // UPDATE: Update a user
-export async function updateUser(params: User) {
+export async function updateUser(params: ParamsType) {
   const { id, email, name } = params;
   try {
     const updatedUser = await prisma.user.update({
