@@ -84,7 +84,7 @@ export default function Home() {
           <div className="mr-5">
             <label htmlFor="name">Name</label>
             <input
-              className="ml-2 border border-2 px-4 py-2 rounded"
+              className="ml-2  border-2 px-4 py-2 rounded"
               type="text"
               placeholder="Name..."
               value={formState.name}
@@ -97,7 +97,7 @@ export default function Home() {
             <label htmlFor="email">Email</label>
             <input
               type="email"
-              className="ml-2 border border-2 px-4 py-2 rounded"
+              className="ml-2  border-2 px-4 py-2 rounded"
               placeholder="Email..."
               value={formState.email}
               onChange={handleChange}
