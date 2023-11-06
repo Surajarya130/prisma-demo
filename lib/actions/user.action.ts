@@ -5,6 +5,12 @@
 import { User } from "@prisma/client";
 import prisma from "@/prisma";
 
+interface ParamsType {
+  id: string;
+  name?: string;
+  email: string;
+}
+
 // READ 1: Get all users
 export async function getAllUsers() {
   try {
@@ -43,18 +49,17 @@ export const createUser = async (params: User) => {
 };
 
 // UPDATE: Update a user
-export async function updateUser(field: User, id: string) {
+export async function updateUser(params: User) {
+  const { id, email, name } = params;
   try {
-    // First, find the user
-    const selectedUser = await prisma.user.findFirst({
-      where: { id },
-    });
-    // Then, update the user
     const updatedUser = await prisma.user.update({
       where: {
-        id: selectedUser?.id,
+        id,
       },
-      data: field,
+      data: {
+        name,
+        email,
+      },
     });
     return updatedUser;
   } catch (error) {

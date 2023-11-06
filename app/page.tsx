@@ -32,10 +32,7 @@ export default function Home() {
     try {
       setIsSubmitted(true);
       if (isEditing && editingUser) {
-        await updateUser(
-          { id: editingUser.id, name: formState.name, email: formState.email },
-          editingUser.id,
-        );
+        await updateUser({ id: editingUser.id, email: formState.email, name: formState.name });
         setIsEditing(false);
       } else {
         await createUser({ id: "", name: formState.name, email: formState.email });
@@ -55,7 +52,6 @@ export default function Home() {
   };
 
   const removeUser = async (id: string) => {
-    console.log(id);
     try {
       await deleteUser(id);
       setUserDeleted(true);

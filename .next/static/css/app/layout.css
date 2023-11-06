@@ -594,23 +594,17 @@ video {
 .table {
   display: table;
 }
-.h-5 {
-  height: 1.25rem;
-}
 .h-4 {
   height: 1rem;
 }
 .min-h-screen {
   min-height: 100vh;
 }
-.w-5 {
-  width: 1.25rem;
+.w-4 {
+  width: 1rem;
 }
 .w-full {
   width: 100%;
-}
-.w-4 {
-  width: 1rem;
 }
 .min-w-full {
   min-width: 100%;
