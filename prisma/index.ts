@@ -9,7 +9,7 @@ declare global {
 const prisma = global.prisma || new PrismaClient();
 
 // This line assigns the Prisma client instance to the global variable only if the application is running in the devlopment environment. This is done to ensure that a new Prisma client instance is created every time the application is started in the development environment.
-if (process.env.NODE_ENV === "development") {
+if (process.env.NODE_ENV === "production") {
   global.prisma = prisma;
 }
 
